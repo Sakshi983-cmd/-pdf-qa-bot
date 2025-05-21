@@ -29,3 +29,4 @@ This Streamlit web app allows you to upload one or more PDF files and ask questi
 ```bash
 pip install -r requirements.txt
 streamlit run app.py
+Try the live demo of this project here: [Streamlit App](https://9audyrodbv4erbgbsa6neb.streamlit.app/)

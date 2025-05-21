@@ -1,0 +1,19 @@
+from app import extract_text_from_pdf, answer_query
+
+def test_extract_text():
+    text = extract_text_from_pdf("test/test_sample1.pdf")
+    assert len(text) > 100  # PDF से कुछ टेक्स्ट तो आएगा ही
+    print("extract_text_from_pdf test passed!")
+
+def test_answer_query():
+    query = "What is the main topic?"
+    results = answer_query(query, top_k=2)
+    assert isinstance(results, list)
+    assert len(results) > 0
+    for res in results:
+        assert 'answer' in res and res['answer'] != ""
+    print("answer_query test passed!")
+
+if __name__ == "__main__":
+    test_extract_text()
+    test_answer_query()

@@ -5,6 +5,7 @@ from sentence_transformers import SentenceTransformer
 from transformers import pipeline
 import faiss
 import numpy as np
+from langchain.text_splitter import RecursiveCharacterTextSplitter
 
 st.title("📄 PDF Question Answering Bot")
 
@@ -15,19 +16,18 @@ if uploaded_files:
     for uploaded_file in uploaded_files:
         with pdfplumber.open(uploaded_file) as pdf:
             texts = [page.extract_text() or "" for page in pdf.pages]
-            pdf_texts[uploaded_file.name] = "\n".join(texts)
+            clean_text = "\n".join([t.strip() for t in texts if t.strip()])
+            pdf_texts[uploaded_file.name] = clean_text
 
     st.success(f"{len(pdf_texts)} PDF(s) processed.")
 
-    # Chunk text for embeddings
-    def chunk_text(text, chunk_size=500):
-        return [text[i:i+chunk_size] for i in range(0, len(text), chunk_size)]
-
+    # Better chunking with overlap
+    splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=100)
     all_chunks = []
     chunk_to_doc = []
 
     for doc_name, text in pdf_texts.items():
-        chunks = chunk_text(text)
+        chunks = splitter.split_text(text)
         all_chunks.extend(chunks)
         chunk_to_doc.extend([doc_name] * len(chunks))
 
@@ -48,21 +48,16 @@ if uploaded_files:
 
     if query:
         query_embedding = embedder.encode([query])
-        distances, indices = index.search(np.array(query_embedding), 3)
+        distances, indices = index.search(np.array(query_embedding), 5)  # Retrieve more chunks
 
-        answers = []
-        for idx in indices[0]:
-            context = all_chunks[idx]
-            doc = chunk_to_doc[idx]
-            result = qa_pipeline(question=query, context=context)
-            answers.append({
-                "document": doc,
-                "answer": result['answer'],
-                "score": result['score'],
-                "context_snippet": context[:200]
-            })
+        # Merge top chunks into one big context
+        merged_context = " ".join([all_chunks[idx] for idx in indices[0]])
 
-        for i, res in enumerate(answers, 1):
-            st.markdown(f"📄 **From:** {res['document']}")
-            st.markdown(f"✅ **Answer:** {res['answer']}")
-            st.markdown(f"✏️ *Context snippet:* {res['context_snippet']}...")
+        # Pass merged context to QA model
+        result = qa_pipeline(question=query, context=merged_context)
+
+        st.markdown(f"📄 **From:** {', '.join(set(chunk_to_doc[idx] for idx in indices[0]))}")
+        st.markdown(f"✅ **Answer:** {result['answer']}")
+        st.markdown(f"✏️ *Score:* {result['score']:.4f}")
+        st.markdown(f"📌 **Context Preview:** {merged_context[:500]}...")
+

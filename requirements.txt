@@ -6,3 +6,4 @@ faiss-cpu
 matplotlib
 wordcloud
 langchain
+googletrans==4.0.0-rc1

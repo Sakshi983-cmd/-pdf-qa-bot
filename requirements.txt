@@ -7,3 +7,4 @@ matplotlib
 wordcloud
 langchain
 googletrans==4.0.0-rc1
+pydantic==1.10.9

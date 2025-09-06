@@ -3,8 +3,6 @@ pdfplumber
 sentence-transformers
 transformers
 faiss-cpu
-matplotlib
-wordcloud
 langchain==0.0.310
 pydantic==1.10.9
 

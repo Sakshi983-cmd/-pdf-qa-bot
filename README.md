@@ -26,9 +26,12 @@ Author: <b>Sakshi Tiwari</b>
 
 ## 🦾 Introduction
 
-**PDF Question Answering Bot** ek intelligent tool hai jo aapko PDF upload karne aur un par sawal poochne ki suvidha deta hai. Yeh AI models se powered hai, jo aapke sawalon ke sahi aur relevant jawab deta hai.
+## 🦾 Introduction
 
-> Apne documents ka gyaan paaiye, instant aur smart tareeke se!
+**PDF Question Answering Bot** is an intelligent tool that allows you to upload PDF documents and ask questions about their content. Powered by advanced AI models, it delivers accurate and context-aware answers directly from your documents.
+
+> Unlock the knowledge inside your PDFs—fast, smart, and reliable!
+> APP LINK - https://9audyrodbv4erbgbsa6neb.streamlit.app/
 
 ---
 
@@ -76,10 +79,14 @@ pip install -r requirements.txt
 ```bash
 streamlit run app.py
 ```
-- PDF upload karo
-- Sawal poochho
-- Jawab instantly pao
+- ### 2. Run the App
 
+```bash
+streamlit run app.py
+```
+- Upload your PDF file
+- Ask questions
+- Get instant answers!
 ---
 
 ## 🛠 Technologies Used
@@ -92,9 +99,7 @@ streamlit run app.py
 
 ---
 
-## 📚 Inspired By
 
-Project inspired by [Alibaba DeepResearch](https://github.com/Alibaba-NLP/DeepResearch).
 
 ---
 
@@ -124,3 +129,17 @@ Email: [tiwarishakshi318@gmail.com] <!-- Apna email dal sakte ho -->
 
 MIT License. Details in [LICENSE](LICENSE).
 
+## 🌟 Inspiring Quotes
+
+> "The answers you seek are hidden in plain sight. Ask, and let knowledge unfold."
+
+> "Innovation is seeing what everybody has seen and thinking what nobody has thought."  
+> — Dr. Albert Szent-Györgyi
+
+> "With every question, a new path to learning opens up."
+
+> "Empowering curiosity, one PDF at a time."
+
+> "Great tools don’t just solve problems—they inspire new questions."
+
+> "Unlock the wisdom in your documents and let your intelligence grow."

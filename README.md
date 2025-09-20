@@ -103,7 +103,7 @@ Project inspired by [Alibaba DeepResearch](https://github.com/Alibaba-NLP/DeepRe
 For queries or collaboration:  
 **Author:** Sakshi Tiwari  
 GitHub: [Sakshi983-cmd](https://github.com/Sakshi983-cmd)  
-Email: [your-email@example.com] <!-- Apna email dal sakte ho -->
+Email: [tiwarishakshi318@gmail.com] <!-- Apna email dal sakte ho -->
 
 ---
 

@@ -1,43 +1,150 @@
-# 📄 PDF Question Answering Bot
+<div align="center">
+  <img src="./assets/avatar.svg" width="120">
+</div>
 
-A Streamlit web app that allows users to upload one or more PDF files and ask questions based on their content. It uses advanced NLP models to understand and answer questions accurately.
+<hr>
 
-🔗 **Live App:** [Click here to open](https://9audyrodbv4erbgbsa6neb.streamlit.app)
+<div align="center" style="line-height: 1;">
+  
+[![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://streamlit.io/)
+[![HuggingFace](https://img.shields.io/badge/HuggingFace-FFD21F?style=for-the-badge&logo=huggingface&logoColor=black)](https://huggingface.co/)
+[![License](https://img.shields.io/github/license/Sakshi983-cmd/-pdf-qa-bot?style=for-the-badge)](./LICENSE)
+[![GitHub](https://img.shields.io/badge/GitHub-24292F?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Sakshi983-cmd/-pdf-qa-bot)
+</div>
 
----
-
-## 🚀 Features
-
-- 📥 **Upload Multiple PDFs** – Drag and drop or select multiple PDF files.
-- 🧠 **Intelligent Q&A** – Ask natural language questions based on PDF content.
-- 🔍 **Semantic Search** – Uses embeddings for contextual understanding.
-- ⚡ **Fast Responses** – Powered by Hugging Face Transformers.
-- 🌐 **Streamlit Cloud Deployment** – Accessible from anywhere.
-
----
-
-## 🛠️ Technologies Used
-
-| Technology | Purpose |
-|------------|---------|
-| **Streamlit** | Web app framework |
-| **pdfplumber** | Extract text from PDFs |
-| **SentenceTransformers** (`all-MiniLM-L6-v2`) | Embedding generation for semantic search |
-| **Hugging Face Transformers** (`roberta-base-squad2`) | Question answering model |
-| **FAISS** | Fast similarity search over embeddings |
+<p align="center">
+🤖 <b>PDF Question Answering Bot</b><br>
+Author: <b>Sakshi Tiwari</b>
+</p>
 
 ---
 
-## 📦 Installation
+## 🦾 Introduction
+
+**PDF Question Answering Bot** is an intelligent assistant that lets users upload PDF files, ask natural language questions, and receive instant, accurate answers powered by advanced AI models.
+
+> Unlock the knowledge inside your documents with one click—fast, scalable, and designed for deep information-seeking.
+
+---
+
+## 🎬 Demo
+
+<p align="center">
+  <img src="./assets/demo.png" width="100%">
+</p>
+
+---
+
+## 📊 System Workflow
+
+<p align="center">
+  <img src="./assets/diagram.png" width="70%">
+</p>
+
+Or view as code:
+
+```mermaid
+graph LR
+    A[PDF Upload] --> B[Preprocessing]
+    B --> C[Embedding]
+    C --> D[QA Model]
+    D --> E[Answer]
+    E --> F[User]
+```
+- **PDF Upload:** User provides the document.
+- **Preprocessing:** Text extraction and cleaning.
+- **Embedding:** Converts text to machine-understandable vectors.
+- **QA Model:** AI model processes queries using document context.
+- **Answer:** Response is delivered to the user.
+
+---
+
+## ✨ Features
+
+- ⚡ **Drag & Drop PDF Upload:** Simple, fast document handling.
+- 🧠 **AI-powered Question Answering:** Ask any question about your PDFs.
+- 🔎 **Contextual Answers:** Returns relevant content snippets with confidence scores.
+- 🚦 **Streamlit Interface:** Intuitive and responsive UI.
+- 🏗️ **Modular Architecture:** Easily extendable with new models or features.
+- 📊 **Confidence & Context Preview:** Transparent outputs for trust and verification.
+
+---
+
+## 🚀 Quick Start
+
+### 1. Environment Setup
+- Python >=3.8
+- [pip](https://pip.pypa.io/en/stable/)
+- (Optional) Docker
 
 ```bash
-# Clone the repository
-git clone https://github.com/your-username/pdf-qa-bot.git
-cd pdf-qa-bot
-
-# Install dependencies
+git clone https://github.com/Sakshi983-cmd/-pdf-qa-bot.git
+cd -pdf-qa-bot
 pip install -r requirements.txt
+```
 
-# Run the Streamlit app
+### 2. Run the App
+
+```bash
 streamlit run app.py
+```
 
+- Upload your PDF file.
+- Ask a question in natural language.
+- Get instant answers with context and confidence score.
+
+---
+
+## 🛠 Technologies Used
+
+- **Python**
+- **Streamlit**
+- **HuggingFace Transformers / LangChain**
+- **FAISS / Pinecone (Vector DB)**
+- **OpenAI / Local LLMs**
+
+---
+
+## 🌟 Star History
+
+<div align="center">
+  <a href="https://star-history.com/#Sakshi983-cmd/-pdf-qa-bot&Date">
+    <img src="https://api.star-history.com/svg?repos=Sakshi983-cmd/-pdf-qa-bot&type=Date" width="100%">
+  </a>
+</div>
+
+---
+
+## 📚 Inspired By
+
+README and project inspired by [Alibaba DeepResearch](https://github.com/Alibaba-NLP/DeepResearch).
+
+---
+
+## 📬 Contact
+
+For questions, suggestions, or collaboration:  
+**Author:** Sakshi Tiwari  
+GitHub: [Sakshi983-cmd](https://github.com/Sakshi983-cmd)  
+Email: [your-email@example.com] <!-- Update with your preferred email address -->
+
+---
+
+## 🏷 Citation
+
+If you use this project, please cite as:
+
+```bibtex
+@misc{pdfqabot2025,
+  author = {Sakshi Tiwari},
+  title = {PDF Question Answering Bot},
+  year = {2025},
+  howpublished = {\url{https://github.com/Sakshi983-cmd/-pdf-qa-bot}}
+}
+```
+
+---
+
+## 📝 License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
